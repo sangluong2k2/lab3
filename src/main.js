@@ -48,6 +48,6 @@ router.on({
     "/admin/news/:id/edit" : ({data}) => {
         const { id } = data;
         print(EditNews.render(id));
-    }
+    },
 });
 router.resolve();
