@@ -33,6 +33,9 @@ router.on({
     },
     "/signin": () => {
         print(signIn.render());
+    },
+    "/admin": () => {
+        print()
     }
 });
 router.resolve();
