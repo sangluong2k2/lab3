@@ -9,14 +9,16 @@ const Header = {
       <div class="bg-[#ca7802]">
         <ul class="flex">
           <li><a href="/" class="block px-4 py-3 hover:bg-[#191f37] hover:text-white font-bold">Trang chủ </a></li>
-          <li><a href="/about" class="block px-4 py-3 hover:bg-[#191f37] hover:text-white font-bold">Tuyển sinh</a></li>
-          <li><a href="/product" class="block px-4 py-3 hover:bg-[#191f37] hover:text-white font-bold">Chương trình đào tạo</a></li>
-          <li><a href="/contact" class="block px-4 py-3 hover:bg-[#191f37] hover:text-white font-bold">Góc sinh viên</a></li>
+          <li><a href="/news" class="block px-4 py-3 hover:bg-[#191f37] hover:text-white font-bold">Tin tức</a></li>
           <li><a href="/contact" class="block px-4 py-3 hover:bg-[#191f37] hover:text-white font-bold">Tuyển dụng</a></li>
-          <form action="" class="ml-[70px] mt-[10px]">
+          <form action="" class="ml-[10px] mt-[10px]">
             <input type="text">
             <button class="border bg-blue-800 ... px-[5px] text-white ... border-none hover:bg-yellow-400 ">Tìm kiếm</button>
           </form>
+          <div class="flex ml-[200px]">
+          <li clas="ml-[40px]"><a href="/signup" class="block px-4 py-3 hover:bg-[#191f37] hover:text-white font-bold">Đăng kí</a></li>
+          <li><a href="/signin" class="block px-4 py-3 hover:bg-[#191f37] hover:text-white font-bold">Đăng nhập</a></li>
+          </div>
         </ul>
       </div>
         `;
