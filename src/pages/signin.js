@@ -1,4 +1,5 @@
-import signUp from "./signup"
+import Header from "../components/header";
+
 
 const signIn = {
     render() {

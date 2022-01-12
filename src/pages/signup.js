@@ -1,3 +1,4 @@
+import Header from "../components/header";
 const signUp = {
     render() {
         return /*html*/ `
