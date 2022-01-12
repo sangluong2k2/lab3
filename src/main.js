@@ -1,6 +1,7 @@
 import Navigo from "navigo";
 import Header from "./components/header";
 import AboutPage from "./pages/about";
+import admin from "./pages/admin";
 import DetailNewsPage from "./pages/detailNews";
 import HomePage from "./pages/home";
 import NewsPage from "./pages/news";
@@ -34,8 +35,8 @@ router.on({
     "/signin": () => {
         print(signIn.render());
     },
-    "/admin": () => {
-        print()
+    "/admin/dashboard": () => {
+        print(admin.render())
     }
 });
 router.resolve();

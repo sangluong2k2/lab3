@@ -10,7 +10,7 @@ const Header = {
         <ul class="flex">
           <li><a href="/" class="block px-4 py-3 hover:bg-[#191f37] hover:text-white font-bold">Trang chủ </a></li>
           <li><a href="/news" class="block px-4 py-3 hover:bg-[#191f37] hover:text-white font-bold">Tin tức</a></li>
-          <li><a href="/admin" class="block px-4 py-3 hover:bg-[#191f37] hover:text-white font-bold">Admin</a></li>
+          <li><a href="/admin/dashboard" class="block px-4 py-3 hover:bg-[#191f37] hover:text-white font-bold">Admin</a></li>
           <form action="" class="ml-[10px] mt-[10px]">
             <input type="text">
             <button class="border bg-blue-800 ... px-[5px] text-white ... border-none hover:bg-yellow-400 ">Tìm kiếm</button>
