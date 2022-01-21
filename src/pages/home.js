@@ -3,7 +3,8 @@ import Header from "../components/header";
 import NewsList from "../components/newsList";
 
 const HomePage = {
-    render() {
+    
+    async render() {
         return /* html */`
             <div class="header">
                 ${Header.render()}
@@ -12,7 +13,7 @@ const HomePage = {
                 ${Banner.render()}
             </div>
             <div>
-                ${NewsList.render()}
+                ${ await NewsList.render()}
             </div>
         `;
     },

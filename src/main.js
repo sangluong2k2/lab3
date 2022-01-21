@@ -12,42 +12,20 @@ import signUp from "./pages/signup";
 
 const router = new Navigo("/", { linksSelector: "a" });
 
-const print = (content) => {
-    document.getElementById("article").innerHTML = content;
+const print =  async (content, id) => {
+    document.getElementById("article").innerHTML = await content.render(id);
 };
 
 router.on({
-    "/": () => {
-        print(HomePage.render());
-    },
-    "/about": () => {
-        print(AboutPage.render());
-    },
-    "/news": () => {
-        print(NewsPage.render());
-    },
-    "/news/:id": ({ data }) => {
-        const { id } = data;
-        print(DetailNewsPage.render(id));
-    },
-    "/signup": () => {
-        print(signUp.render());
-    },
-    "/signin": () => {
-        print(signIn.render());
-    },
-    "/admin": () => {
-        print(admin.render());
-    },
-    "/admin/news": () => {
-        print(NewsAdmin.render())
-    },
-    "/admin/news/add": () => {
-        print(AddNews.render())
-    },
-    "/admin/news/:id/edit" : ({data}) => {
-        const { id } = data;
-        print(EditNews.render(id));
-    },
+    "/": () =>  print(HomePage),
+    "/about": () => print(AboutPage),
+    "/news": () => print(NewsPage),
+    "/news/:id": (data) => print(DetailNewsPage, data.data.id),
+    "/signup": () => print(signUp),
+    "/signin": () => print(signIn),
+    "/admin": () => print(admin),
+    "/admin/news": () => print(NewsAdmin),
+    "/admin/news/add": () => print(AddNews),
+    "/admin/news/:id/edit" : ({data}) => print(EditNews, data.data.id),
 });
 router.resolve();

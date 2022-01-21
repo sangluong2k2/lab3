@@ -2,12 +2,12 @@ import Header from "../components/header";
 import NewsList from "../components/newsList";
 
 const NewsPage = {
-    render() {
+    async render() {
         return `
             <div class="header">
                 ${Header.render()}
             </div>
-            ${NewsList.render()}
+            ${await NewsList.render()}
         `;
     },
 };

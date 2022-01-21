@@ -1,12 +1,16 @@
-import data from "../data";
+import Header from "../components/header";
 
 const DetailNewsPage = {
-    render(id) {
-        const result = data.find((post) => post.id === id);
+    async render(id) {
+        const response = await fetch("http://localhost:3001/post/"+id);
+        const data = await response.json();
         return `
-        <h1 class="text-center font-bold text-[36px] ">${result.title}</h1>
-        <img class="mx-auto "src="${result.img}" />
-        <p class="text-justify ">${result.desc}</p>
+        <div class="header">
+            ${Header.render()}
+        </div>
+        <h1 class="text-center font-bold text-[36px] ">${data.title}</h1>
+        <img class="mx-auto "src="${data.img}" />
+        <p class="text-justify ">${data.desc}</p>
         `;
     },
 };
