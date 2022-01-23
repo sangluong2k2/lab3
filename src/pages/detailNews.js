@@ -1,9 +1,11 @@
+
+import { get } from "../api/post";
 import Header from "../components/header";
+
 
 const DetailNewsPage = {
     async render(id) {
-        const response = await fetch("http://localhost:3001/post/"+id);
-        const data = await response.json();
+        const {data} = await get(id);
         return `
         <div class="header">
             ${Header.render()}

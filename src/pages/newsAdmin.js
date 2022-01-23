@@ -1,8 +1,10 @@
+import { getAll, remove } from "../api/post";
 import HeaderAdmin from "../components/headerAdmin";
-import data from "../data";
+
 
 const NewsAdmin = {
-    render () {
+    async render () {
+      const {data} = await getAll()
         return /*html*/ `
         <div class="nav">
             ${HeaderAdmin.render()}
@@ -65,6 +67,7 @@ const NewsAdmin = {
                 </td>
                 <td class="px-6 py-4 whitespace-nowrap text-right text-sm font-medium">
                   <a href="/admin/news/${post.id}/edit" class="text-indigo-600 hover:text-indigo-900">Edit</a>
+                  <button data-id=${post.id} class="btn btn-remove">Remove</button>
                 </td>
               </tr>
                     `).join("")}
@@ -78,5 +81,17 @@ const NewsAdmin = {
       </div>
         `;
      },
+     afterRender(){
+       const buttons = document.querySelectorAll('.btn');
+       buttons.forEach(button => {
+         const id = button.dataset.id;
+         button.addEventListener('click', () => {
+          const confirm = window.confirm("Mày có chắc chắn muốn xóa không?");
+          if(confirm){
+              remove(id).then(() => console.log("Mày đã xóa thành công"));
+          }
+         })
+       })
+     }
 };
 export default NewsAdmin;

@@ -1,7 +1,7 @@
+import { getAll } from "../api/post";
 const NewsList = {
     async render() {
-        const response = await fetch("http://localhost:3001/post");
-        const data = await response.json();
+        const {data} = await getAll();
         return /* html */`
                 <h2 class="font-semibold text-2xl uppercase text-blue-800 my-4">Tin tức học tập</h2>
                 <div class="grid grid-cols-3 gap-8">
